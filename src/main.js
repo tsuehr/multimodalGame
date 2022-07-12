@@ -12,6 +12,10 @@ const config = {
     width: 1280, //resolution for the game window in the browser
     height: 768,
     type: Phaser.AUTO,
+    physics:{
+        default:'arcade',
+        arcade:{debug:true}
+    }
 };
 
 const game = new Phaser.Game(config);

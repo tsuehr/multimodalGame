@@ -6,6 +6,8 @@ export default class StartScreen extends Phaser.Scene {
     constructor() {
         super();
         this.btn;
+        this.hero;
+        this.status = 0;
     }
 
     preload() {
@@ -14,15 +16,39 @@ export default class StartScreen extends Phaser.Scene {
             frameHeight: 64,
             endFrame: 23
         });
+        this.load.spritesheet('marvel', 'marvel.png', {frameWidth: 48, frameHeight: 48});
         this.load.image('start_1', 'start_1.png');
         this.load.image('start_2', 'start_2.png');
-        this.load.image('pixel_cab', 'cab_pixelart.jpg');
         //this.load.audio('danger_zone', 'start.mp3')
     }
 
     create() {
         //var music = this.sound.add('danger_zone');
         //music.play();
+
+        this.anims.create({
+            key: 'idle',
+            frames: this.anims.generateFrameNumbers('marvel', {frames: [5, 6, 7, 8]}),
+            frameRate: 8,
+            repeat: -1
+        });
+
+        this.anims.create({
+            key: 'kick',
+            frames: this.anims.generateFrameNumbers('marvel', {frames: [10, 11, 12, 13, 10]}),
+            frameRate: 8,
+            repeat: -1,
+            repeatDelay: 2000
+        });
+
+        this.anims.create({
+            key: 'punch',
+            frames: this.anims.generateFrameNumbers('marvel', {frames: [15, 16, 17, 18, 17, 15]}),
+            frameRate: 8,
+            repeat: -1,
+            repeatDelay: 2000
+        });
+
 
         this.anims.create({
             key: 'burn',
@@ -41,7 +67,9 @@ export default class StartScreen extends Phaser.Scene {
         this.add.sprite(x+150, y, 'flames').play('burn');
         this.add.sprite(x+200, y+50, 'flames').play('burn');
         this.add.sprite(x-200, y+50, 'flames').play('burn');
-        var cab = this.add.image(x,y-400,'pixel_cab')
+        this.hero = this.add.sprite(1280/2, 200).play('idle');
+        this.hero.setScale(8);
+        this.hero.play('idle');
 
         var btn = this.add.sprite(1280/2, 768-100, 'start_1').setInteractive();
         this.btn = btn;
@@ -63,6 +91,14 @@ export default class StartScreen extends Phaser.Scene {
     }
 
     update(){
+        this.status+=1;
+        if (this.status >=100){
+            this.status = 0;
+            this.hero.play('kick');
+            this.hero.play('punch');
+        }else{
+            this.hero.play('idle');
+        }
 
     }
 }

@@ -1,7 +1,7 @@
 {
-  "name": "thedispatchergame",
+  "name": "TheMultimodalGame",
   "version": "1.0.0",
-  "description": "taxi dispatcher game for spatial-temporal fairness experiments",
+  "description": "A multimodal system game to test voice and haptic fusion",
   "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html",
