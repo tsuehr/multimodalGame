@@ -20,6 +20,11 @@ export default class GameScreen extends Phaser.Scene {
         this.chargeText;
         this.buttonLeft = false;
         this.buttonRight = false;
+        this.bulletsPaused = false;
+        this.bulletsPausedText;
+        this.bulletsDodged = 0;
+        this.bulletsDodgedCounter = 0;
+
     }
 
     preload() {
@@ -65,6 +70,21 @@ export default class GameScreen extends Phaser.Scene {
 
     releaseLeft() {
         this.buttonLeft = false;
+    }
+
+    pause(){
+        if(this.bulletsPaused){
+            this.bulletsPaused = false;
+            this.bulletsPausedText.setText('');
+        }else{
+            this.bulletsPaused = true;
+            this.bulletsPausedText.setText('Bullets Paused');
+        }
+
+    }
+
+    resume(){
+
     }
 
     releaseRight() {
@@ -116,6 +136,8 @@ export default class GameScreen extends Phaser.Scene {
 
         this.hitpointsText = this.add.text(10, 10, 'Hitpoints: '+this.hitpoints, { font: '16px Courier', fill: '#00ff00' });
         this.chargeText = this.add.text(10, 100, '', { font: '20px Courier', fill: '#00ff00' });
+        this.bulletsPausedText = this.add.text(550,100, '', { font: '20px Courier', fill: '#00ff00' });
+        this.bulletsDodgedText = this.add.text(1000,10, 'Bullets Dodged: '+this.bulletsDodgedCounter, { font: '16px Courier', fill: '#00ff00' });
         // Animation set
         this.anims.create({
             key: 'walk',
@@ -208,6 +230,8 @@ export default class GameScreen extends Phaser.Scene {
         this.input.keyboard.on('keydown-D', this.blockRight, this);
         this.input.keyboard.on('keyup-D', this.releaseRight, this);
 
+        this.input.keyboard.on('keydown-P', this.pause, this);
+
         //this.hero.body.onCollide = new Phaser.Signal();
         //this.hero.body.bounce.set(1);
         //this.bullet2.body.bounce.set(1);
@@ -270,7 +294,9 @@ export default class GameScreen extends Phaser.Scene {
 
         this.bullet2.x += (this.speed2) * delta;
 
-        if (this.bullet2.x > 1224) {
+        if (this.bullet2.x > 1224 && !this.bulletsPaused) {
+            this.bulletsDodgedCounter +=1;
+            this.bulletsDodgedText.setText('Bullets Dodged: '+this.bulletsDodgedCounter);
             this.bullet2.x = 64;
             if (Math.random()<0.5){
                 //let pos = Math.random() * 300;
@@ -288,7 +314,9 @@ export default class GameScreen extends Phaser.Scene {
 
         this.bullet1.x += this.speed2 * delta;
 
-        if (this.bullet1.x > 1224) {
+        if (this.bullet1.x > 1224 && !this.bulletsPaused) {
+            this.bulletsDodgedCounter +=1;
+            this.bulletsDodgedText.setText('Bullets Dodged: '+this.bulletsDodgedCounter);
             this.bullet1.x = 64;
             if (Math.random()<0.5){
                 //let pos = Math.random() * 300;
@@ -296,11 +324,8 @@ export default class GameScreen extends Phaser.Scene {
             }else{
                 this.bullet1.y = Math.random() * 130;
             }
-            //if (Math.random() >= 0.5) {
-            //this.bullet2.y = 340;
-            //} else {
-            //  this.bullet2.y = 540;
-            //}
+
         }
+
     }
 }
