@@ -1,4 +1,4 @@
-# The Dispatcher Game
+# Dodge The Bullets! (Group 12 - Multimodal Interaction)
 
 ## Requirements
 
