@@ -1,5 +1,6 @@
 import Phaser from 'phaser'
 import ObjectHandler from './ObjectHandler'
+import annyang from 'annyang'
 
 export default class GameScreen extends Phaser.Scene {
 
@@ -14,6 +15,7 @@ export default class GameScreen extends Phaser.Scene {
         this.power;
         this.hitpoints = 100;
         this.hitpointsText;
+        this.annyang = annyang;
     }
 
     preload() {
@@ -24,7 +26,6 @@ export default class GameScreen extends Phaser.Scene {
         this.load.image('cannon', 'cannon.png');
         this.load.image('ground', 'ground.png');
         this.load.spritesheet('marvel', 'marvel.png', {frameWidth: 48, frameHeight: 48});
-
     }
 
     reduceHitpoints (hero, bullet) {
@@ -32,10 +33,10 @@ export default class GameScreen extends Phaser.Scene {
 
         this.hitpoints -=1;
         if (this.hitpoints <=0){
-            hero.play('die');
-            this.bullet1.disableBody(true,true);
-            this.bullet2.disableBody(true,true);
-            this.scene.start('startscreen');
+            //hero.play('die');
+            //this.bullet1.disableBody(true,true);
+            //this.bullet2.disableBody(true,true);
+            //this.scene.start('startscreen');
         }
 
     }
@@ -187,6 +188,38 @@ export default class GameScreen extends Phaser.Scene {
         this.physics.add.collider(this.hero, this.bullet1);
         this.physics.add.overlap(this.hero,this.bullet2, this.reduceHitpoints, null, this);
         this.physics.add.overlap(this.hero,this.bullet1, this.reduceHitpoints, null, this);
+
+        if (this.annyang) {
+            // Let's define a command.
+            console.log('ANNYANG IS!')
+            const commands = {
+                'jump': () => { this.startJump(); },
+
+                'Trump': () => { this.startJump();},
+
+                'ramp': () => {this.startJump();},
+
+                'slump': () => {this.startJump();},
+                'go': () => {this.startJump();},
+                'go go': () => {this.startJump();},
+                'go go go': () => {this.startJump();},
+                'jo': () => {this.startJump();},
+                'toe': () => {this.startJump();},
+                'oh': () => {this.startJump();},
+                'tramp': () => {this.startJump();},
+                'turn down for what': () => {this.hero.play('jumpkick')}
+            };
+
+            // Add our commands to annyang
+            this.annyang.addCommands(commands);
+            this.annyang.addCallback('result', function (userSaid, commandTest, phrases) {
+                console.log(userSaid); // sample output: 'hello'
+            });
+            // Start listening.
+            this.annyang.start({ autoRestart: true, continuous: true });
+        }else{
+            console.log("ANNYANG IS NOT")
+        }
     }
 
 

@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9c48a61f-8fd3-49e4-b7d4-7fb8fe1205da" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/main.1f19ae8e.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/main.1f19ae8e.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.1f19ae8e.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/main.1f19ae8e.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StartScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/StartScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,11 +14,60 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GameScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="202" column="37" lean-forward="true" selection-start-line="202" selection-start-column="37" selection-end-line="202" selection-end-column="37" />
+            <state relative-caret-position="367">
+              <caret line="209" column="69" selection-start-line="209" selection-start-column="69" selection-end-line="209" selection-end-column="69" />
+              <folding>
+                <element signature="e#147#375#0" />
+                <element signature="e#391#781#0" />
+                <element signature="e#401#504#0" />
+                <element signature="e#1119#1128#0" />
+                <element signature="e#1194#1271#0" />
+                <element signature="e#1287#1436#0" />
+                <element signature="e#1297#1319#0" />
+                <element signature="e#1458#1627#0" />
+                <element signature="e#1647#1723#0" />
+                <element signature="e#1746#1913#0" />
+                <element signature="e#1934#2010#0" />
+                <element signature="e#2205#2377#0" />
+                <element signature="e#2407#2579#0" />
+                <element signature="e#2850#3066#0" />
+                <element signature="e#3096#3272#0" />
+                <element signature="e#3528#3726#0" />
+                <element signature="e#3756#3904#0" />
+                <element signature="e#5181#5230#0" />
+                <element signature="e#6190#6222#0" />
+                <element signature="e#6203#6227#0" />
+                <element signature="e#5821#6892#0" />
+                <element signature="e#5976#6392#0" />
+                <element signature="e#6045#6147#0" />
+                <element signature="e#6151#6220#0" />
+                <element signature="e#6234#6263#0" />
+                <element signature="e#6477#6886#0" />
+                <element signature="e#6546#6648#0" />
+                <element signature="e#6652#6721#0" />
+                <element signature="e#6734#6763#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="7" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -31,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/StartScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="89" column="39" lean-forward="true" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
+            <state relative-caret-position="510">
+              <caret line="93" column="23" lean-forward="true" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -68,15 +112,15 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/main.js" />
         <option value="$PROJECT_DIR$/dist/index.html" />
-        <option value="$PROJECT_DIR$/src/GameScreen.js" />
         <option value="$PROJECT_DIR$/src/StartScreen.js" />
+        <option value="$PROJECT_DIR$/src/GameScreen.js" />
       </list>
     </option>
   </component>
   <component name="JupyterTrust" id="2e754df4-3380-49b2-9f49-5c43f0660bcc" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="128" />
-    <option name="y" value="41" />
+    <option name="x" value="425" />
+    <option name="y" value="125" />
     <option name="width" value="1481" />
     <option name="height" value="917" />
   </component>
@@ -86,7 +130,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -103,7 +147,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -176,16 +220,18 @@
       <workItem from="1656516717539" duration="1186000" />
       <workItem from="1656769621445" duration="104000" />
       <workItem from="1657620927135" duration="15028000" />
+      <workItem from="1657641069755" duration="33000" />
+      <workItem from="1657968850398" duration="4224000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20229000" />
+    <option name="totallyTimeSpent" value="24486000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26332623" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -256,13 +302,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -277,10 +316,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/StartScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="93" column="23" lean-forward="true" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="29" />
+          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
@@ -289,20 +345,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="202" column="37" lean-forward="true" selection-start-line="202" selection-start-column="37" selection-end-line="202" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/StartScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="367">
-          <caret line="89" column="39" lean-forward="true" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
+          <caret line="209" column="69" selection-start-line="209" selection-start-column="69" selection-end-line="209" selection-end-column="69" />
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
+            <element signature="e#147#375#0" />
+            <element signature="e#391#781#0" />
+            <element signature="e#401#504#0" />
+            <element signature="e#1119#1128#0" />
+            <element signature="e#1194#1271#0" />
+            <element signature="e#1287#1436#0" />
+            <element signature="e#1297#1319#0" />
+            <element signature="e#1458#1627#0" />
+            <element signature="e#1647#1723#0" />
+            <element signature="e#1746#1913#0" />
+            <element signature="e#1934#2010#0" />
+            <element signature="e#2205#2377#0" />
+            <element signature="e#2407#2579#0" />
+            <element signature="e#2850#3066#0" />
+            <element signature="e#3096#3272#0" />
+            <element signature="e#3528#3726#0" />
+            <element signature="e#3756#3904#0" />
+            <element signature="e#5181#5230#0" />
+            <element signature="e#6190#6222#0" />
+            <element signature="e#6203#6227#0" />
+            <element signature="e#5821#6892#0" />
+            <element signature="e#5976#6392#0" />
+            <element signature="e#6045#6147#0" />
+            <element signature="e#6151#6220#0" />
+            <element signature="e#6234#6263#0" />
+            <element signature="e#6477#6886#0" />
+            <element signature="e#6546#6648#0" />
+            <element signature="e#6652#6721#0" />
+            <element signature="e#6734#6763#0" />
           </folding>
         </state>
       </provider>
