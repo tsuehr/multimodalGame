@@ -16,6 +16,10 @@ export default class GameScreen extends Phaser.Scene {
         this.hitpoints = 100;
         this.hitpointsText;
         this.annyang = annyang;
+        this.said_jump = false;
+        this.chargeText;
+        this.buttonLeft = false;
+        this.buttonRight = false;
     }
 
     preload() {
@@ -47,13 +51,38 @@ export default class GameScreen extends Phaser.Scene {
 
     startJump() {
         this.hero.play('jump');
-        this.hero.setVelocityY(-200);
+        this.said_jump=true;
+        this.chargeText.setText('DOUBLEJUMP ACTIVE! PRESS SPACE NOW!');
+    }
+
+    blockLeft() {
+        this.buttonLeft = true;
+    }
+
+    blockRight() {
+        this.buttonRight = true;
+    }
+
+    releaseLeft() {
+        this.buttonLeft = false;
+    }
+
+    releaseRight() {
+        this.buttonRight = false;
     }
 
     endJump() {
         //this.timer.remove();
         //this.hero.setVelocityY(-this.power * 100);
         //this.power = 0;
+        if (this.said_jump){
+            this.hero.setVelocityY(-400);
+            this.said_jump=false;
+            this.chargeText.setText('');
+        }else{
+            this.hero.setVelocityY(-200);
+        }
+
         this.hero.play('idle');
     }
 
@@ -86,7 +115,7 @@ export default class GameScreen extends Phaser.Scene {
     create() {
 
         this.hitpointsText = this.add.text(10, 10, 'Hitpoints: '+this.hitpoints, { font: '16px Courier', fill: '#00ff00' });
-
+        this.chargeText = this.add.text(10, 100, '', { font: '20px Courier', fill: '#00ff00' });
         // Animation set
         this.anims.create({
             key: 'walk',
@@ -166,14 +195,18 @@ export default class GameScreen extends Phaser.Scene {
         this.bullet1.setImmovable();
         //add the colliders
 
-        this.input.keyboard.on('keydown-SPACE', this.startJump, this);
+        //this.input.keyboard.on('keydown-SPACE', this.startJump, this);
         this.input.keyboard.on('keyup-SPACE', this.endJump, this);
 
         this.input.keyboard.on('keydown-A', this.startWalkLeft, this);
+        this.input.keyboard.on('keydown-A', this.blockLeft, this);
         this.input.keyboard.on('keyup-A', this.endWalkLeft, this);
+        this.input.keyboard.on('keyup-A', this.releaseLeft, this);
 
         this.input.keyboard.on('keydown-D', this.startWalkRight, this);
         this.input.keyboard.on('keyup-D', this.endWalkRight, this);
+        this.input.keyboard.on('keydown-D', this.blockRight, this);
+        this.input.keyboard.on('keyup-D', this.releaseRight, this);
 
         //this.hero.body.onCollide = new Phaser.Signal();
         //this.hero.body.bounce.set(1);
@@ -184,8 +217,8 @@ export default class GameScreen extends Phaser.Scene {
 
         this.hero.setCollideWorldBounds(true);
         this.physics.add.collider(this.hero, this.ground);
-        this.physics.add.collider(this.hero, this.bullet2);
-        this.physics.add.collider(this.hero, this.bullet1);
+        //this.physics.add.collider(this.hero, this.bullet2);
+        //this.physics.add.collider(this.hero, this.bullet1);
         this.physics.add.overlap(this.hero,this.bullet2, this.reduceHitpoints, null, this);
         this.physics.add.overlap(this.hero,this.bullet1, this.reduceHitpoints, null, this);
 
@@ -207,7 +240,15 @@ export default class GameScreen extends Phaser.Scene {
                 'toe': () => {this.startJump();},
                 'oh': () => {this.startJump();},
                 'tramp': () => {this.startJump();},
-                'turn down for what': () => {this.hero.play('jumpkick')}
+                'turn down for what': () => {this.hero.play('jumpkick');},
+                'go left': () =>{if(!this.buttonRight){this.startWalkLeft();}},
+                'go right': () =>{if(!this.buttonLeft){this.startWalkRight();}},
+                'stop going right': () =>{this.endWalkRight();},
+                'stop going left': () =>{this.endWalkLeft();},
+                'make a super jump for me': () => {this.startJump();
+                this.endJump();},
+                'make a jump for me': () => {this.endJump();},
+
             };
 
             // Add our commands to annyang

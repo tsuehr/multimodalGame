@@ -76,7 +76,8 @@ export default class StartScreen extends Phaser.Scene {
         this.btn.on('pointerover',this.btnHoverIn, this);
         this.btn.on('pointerout',this.btnHoverOut, this);
         this.btn.on('pointerup', this.startGame, this);
-        this.btn.setScale(0.2)
+        this.btn.setScale(0.2);
+        this.chargeText = this.add.text(380, 500, 'DODGE THE BULLETS!', { font: '50px Courier', fill: '#00ff00' });
     }
 
     startGame(){
